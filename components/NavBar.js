@@ -19,7 +19,7 @@ const Pages = [
 
 export default function NavBar()  {
   return (
-    <div className="bg-gray-50 bg-opacity-100 dark:bg-gray-800 shadow-md inset-x-0 top-0 flex flex-wrap mb-2 fixed">
+    <div className="z-10 bg-gray-50 bg-opacity-100 dark:bg-gray-800 shadow-md inset-x-0 top-0 flex flex-wrap mb-2 fixed">
 
       {/* NavBar Name */}
       <div className="p-3 ml-1 text-lg font-bold">{name}</div>
@@ -40,7 +40,7 @@ export default function NavBar()  {
         <div className="md:flex">
           {
             Pages.map( page => {
-              return <div key={page.name} className="m-0.5 p-3 hover:text-green-500 hover:border-solid md:hover:border-b-2 md:hover:border-r-0 hover:border-current hover:opacity-75 hover:border-r-2"><Link href={page.url}>{page.name}</Link></div>
+              return <Link href={page.url}><div key={page.name} className="m-0.5 p-3 hover:text-green-500 hover:border-solid md:hover:border-b-2 md:hover:border-r-0 hover:border-current hover:opacity-75 hover:border-r-2 hover:cursor-pointer">{page.name}</div></Link>
             })
           }
         </div>
