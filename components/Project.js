@@ -1,9 +1,10 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import Social from './Social'
 
 export default function Project({project}) {
   return (
-    <div className="m-auto bg-gray-50 dark:bg-gray-800 shadow-md flex md:flex-row flex-col md:max-w-7xl">
+    <div className="mx-auto bg-gray-50 dark:bg-gray-800 shadow-md flex md:flex-row flex-col max-w-full">
       {/* Top of Project Card */}
       {project.img &&
         <div className="max-w-xl max-h-max md:h-auto h-64 w-full relative">
@@ -13,12 +14,15 @@ export default function Project({project}) {
       {/* Content of Card */}
       <div className={`p-2 m-2 flex-col ${(project.img) ? "md:border-l-2" : ""}`}>
         {/* Project Name */}
-        <div className=" p-1 flex border-b-2 items-center"> 
-          <h2 className="text-lg text-green-700 font-bold">{project.name}</h2>
-        </div>
+        <Link href={`/projects/${project.id}`}>
+          <div className="hover:cursor-pointer hover:text-green-500 p-1 flex justify-between text-green-700 font-bold border-b-2 items-center"> 
+            <h2 className="text-lg">{project.name}</h2>
+            <h2 className="inset-y-0 right-0 text-xl">&rarr;</h2>
+          </div>
+        </Link>
         {/* Project Description */}
         <div className="px-1">
-          <h3 className="font-bold border-b-2 border-green-500">Description</h3>
+          <h3 className="font-bold border-b-2 border-green-700">Description</h3>
           <p>{project.description}</p>
         </div>
         {/* Project Responsibilities */}

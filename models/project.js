@@ -13,7 +13,10 @@ const projectSchema = mongoose.Schema({
       link: String
     }
   ]
-})
+},
+{
+  timestamps: true
+});
 
 projectSchema.set('toJSON', {
     transform: (document, returnedObject) => {
