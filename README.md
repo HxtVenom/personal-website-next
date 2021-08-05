@@ -1,4 +1,35 @@
 
+# Personal Website
+
+My personal website created using NextJS and TailwindCSS. The purpose of this website is to be used as a Portfolio/Resume/Blog for myself to present in the future.
+
+
+## Deployment
+
+To deploy this project:
+
+1. Install all dependencies by running
+
+```bash
+  npm install
+```
+
+2. Ensure that your environment variables are setup.
+
+3. Start the development server by running
+
+```bash
+  npm run dev
+```
+
+  
+### Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`MONGODB_URI`
+
+  
 ## Roadmap
 
 - API work that needs to be done:
