@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const name = "Ricardo Ruiz"
 
@@ -9,15 +10,18 @@ const Pages = [
   },
   {
     name: "Projects",
-    url: "/"
+    url: "/projects"
   },
   {
     name: "About Me",
-    url: "/"
+    url: "/about"
   }
 ]
 
 export default function NavBar()  {
+
+  const router = useRouter();
+
   return (
     <div className="z-10 bg-gray-50 bg-opacity-100 dark:bg-gray-800 shadow-md inset-x-0 top-0 flex flex-wrap mb-2 fixed">
 
@@ -40,7 +44,8 @@ export default function NavBar()  {
         <div className="md:flex">
           {
             Pages.map( page => {
-              return <Link href={page.url}><div key={page.name} className="m-0.5 p-3 hover:text-green-500 hover:border-solid md:hover:border-b-2 md:hover:border-r-0 hover:border-current hover:opacity-75 hover:border-r-2 hover:cursor-pointer">{page.name}</div></Link>
+              return <Link key={page.name} href={page.url}><div className={`m-0.5 p-3 hover:text-green-500 hover:border-solid md:hover:border-b-2 md:hover:border-r-0 hover:border-current hover:opacity-75 hover:border-r-2 
+                                                ${router.asPath == page.url ? "text-green-500 border-current md:border-b-2 md:border-r-0 border-r-2" : ""}`}>{page.name}</div></Link>
             })
           }
         </div>
