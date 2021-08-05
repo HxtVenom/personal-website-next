@@ -1,29 +1,45 @@
-# Next.js + Tailwind CSS Example
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) (v2.1) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+## Roadmap
 
-It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
-
-## Preview
-
-Preview the example live on [StackBlitz](http://stackblitz.com/):
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+- API work that needs to be done:
+    - Create /projects/[id] routes to support operations on individual projects
+    - Add limit to retrieving projects (only return a certain amount on preview)
+    - Implement blog post stuff
+---
+- Project Component:
+    - Add link to full project page
+- ProjectPreview Component:
+    - Create Component
+    - Should display:
+        - name
+        - image
+        - link to visit project page
+    - Also have link to projects page after previews
+- Project/[id] Page:
+    - Create static generation using getStaticPaths
+    - Should display:
+        - link back to projects page
+        - image as header
+        - name
+        - description
+        - duties
+        - links
+---
+- Blog Component:
+    - Create
+    - Should Display:
+        - Title
+        - Date
+        - preview of text
+        - link to full article
+- Individual Blog Page:
+    - Create
+    - Should display:
+        - link back to blogs page
+        - image as header
+        - Title
+        - Date
+        - Author/Authors
+        - body of blog
+        - maybe comments
+    
