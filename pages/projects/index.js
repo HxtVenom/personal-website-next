@@ -24,7 +24,7 @@ export default function Home({ projects }) {
     return (
       <Layout>
         <Head>
-          <title>Ricardo Ruiz - Home</title>
+          <title>Ricardo Ruiz - Projects</title>
         </Head>
         <h1>{projects.error}</h1>
       </Layout>
@@ -37,7 +37,7 @@ export default function Home({ projects }) {
           <title>Ricardo Ruiz - Home</title>
         </Head>
         <div className="flex flex-col space-y-4">
-          <button onClick={() => postProject()}>Add Project</button>
+          {/* {<button onClick={() => postProject()}>Add Project</button>} */}
           {
             projects.map(project => {
              return <Project key={project.id} project={project} />

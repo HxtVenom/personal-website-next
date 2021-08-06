@@ -4,7 +4,7 @@ import Social from './Social'
 
 export default function Project({project}) {
   return (
-    <div className="mx-auto bg-gray-50 dark:bg-gray-800 shadow-md flex md:flex-row flex-col max-w-full">
+    <div className="bg-gray-50 dark:bg-gray-800 shadow-md flex md:flex-row flex-col max-w-max mb-2 m-auto">
       {/* Top of Project Card */}
       {project.img &&
         <div className="max-w-xl max-h-max md:h-auto h-64 w-full relative">
