@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout from '../components/Layout'
 import ProjectPreview from '../components/ProjectPreview'
 
@@ -16,6 +17,18 @@ export default function Home({projects}) {
                 return <ProjectPreview key={project.id} project={project} />
               })
             }
+            <div className="w-full">
+              <Link href="/projects">
+                <div className="
+                my-2 w-max py-2 px-3 m-auto
+                shadow-md rounded-md bg-gray-50 dark:bg-gray-800
+                hover:cursor-pointer hover:text-white hover:bg-green-500 hover:opacity-75
+                hover:shadow-lg
+                ">
+                  All Projects
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </Layout>
