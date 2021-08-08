@@ -14,12 +14,6 @@ const project2 = {
 
 export default function Home({ projects }) {
 
-  const postProject = async () => {
-    const res = await fetch("http://localhost:3000/api/projects", { method: "POST", body: JSON.stringify(project2) });
-
-    console.log(res);
-  }
-
   if(projects.error){
     return (
       <Layout>
@@ -37,7 +31,6 @@ export default function Home({ projects }) {
           <title>Ricardo Ruiz - Home</title>
         </Head>
         <div className="flex flex-col space-y-4">
-          {/* {<button onClick={() => postProject()}>Add Project</button>} */}
           {
             projects.map(project => {
              return <Project key={project.id} project={project} />
