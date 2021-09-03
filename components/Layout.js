@@ -1,14 +1,15 @@
-import NavBar from './NavBar'
-import Footer from './Footer'
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
-export default function Layout ({children}){
+export default function Layout({ children }) {
   return (
-    <div className="text-gray-800 dark:bg-gray-700 dark:text-gray-200 flex flex-col min-h-screen">
-      <NavBar/>
-      <main className="bg-gray-100 dark:bg-gray-700 pt-16 px-6 flex-grow pb-4">
-        {children}
-      </main>
-      <Footer/>
+    <div className="flex flex-col min-h-screen text-gray-800 dark:bg-gray-700 dark:text-gray-200">
+      <NavBar />
+      <div className="w-full bg-gray-200 dark:bg-gray-700 pt-16 flex-grow pb-4 px-4">
+        <main className="mx-auto lg:max-w-screen-2xl ">{children}</main>
+      </div>
+      <Footer />
     </div>
-  )
+  );
 }
+

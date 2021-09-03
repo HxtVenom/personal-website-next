@@ -5,7 +5,7 @@ const handler = async (req, res) => {
   const { method } = req;
 
   if(method == "GET"){
-    const projects = await Project.find().sort({createdAt: -1}).limit(5);
+    const projects = await Project.find().sort({createdAt: -1}).limit(3);
 
     if(projects.length == 0){
       return res.status(404).json({error: "No projects found"});

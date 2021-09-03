@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Layout from '../../components/Layout'
 import Project from '../../components/Project'
 
 const project2 = {
@@ -16,28 +15,28 @@ export default function Home({ projects }) {
 
   if(projects.error){
     return (
-      <Layout>
+      <div>
         <Head>
           <title>Ricardo Ruiz - Projects</title>
         </Head>
         <h1>{projects.error}</h1>
-      </Layout>
+      </div>
     )
   }
 
   return (
-      <Layout>
+      <div>
         <Head>
           <title>Ricardo Ruiz - Home</title>
         </Head>
-        <div className="flex flex-col space-y-4">
+        <div className="mx-auto flex gap-4 justify-between flex-wrap">
           {
             projects.map(project => {
              return <Project key={project.id} project={project} />
             })
           }
         </div>
-      </Layout>
+      </div>
   )
 }
 
